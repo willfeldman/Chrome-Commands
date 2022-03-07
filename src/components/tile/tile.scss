@@ -1,17 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-* {
-    font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
-}
-
 button {
     height: 100px;
     width: 170px;
     border: 0;
     opacity: 0.8;
     position: relative;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 button:hover {
