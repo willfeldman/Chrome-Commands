@@ -6,8 +6,15 @@ const Button = styled.button`
 `;
 
 function Tile(props) {
+    function consoleIt() {
+        console.log(props.text + " was clicked!");
+        props.headerText.setText({
+            Main: "hi"
+        });
+    }
+
     return (
-        <Button color= { props.color } >
+        <Button color={ props.color } onClick={ props.headerText } >
             <div>
                 { props.text }
             </div>
