@@ -8,13 +8,14 @@ function App() {
     const [text, setText] = useState({Main: textMain, Sub: textSub});
 
     function updateText() {
-        setText({Main: "hi", Sub: "bye"});
+        setText({Main: "want this to be the button name which is TileContainer > Tile text", 
+        Sub: "want this to be assocaited text"});
     }
 
     return (
     <div className='pageBody'>
         <Header textMain={text.Main} textSub={text.Sub} />
-        <TileContainer text={updateText} />
+        <TileContainer text={setText} />
     </div>
     );
 }
