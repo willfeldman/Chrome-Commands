@@ -1,8 +1,14 @@
 import './tile.scss';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { pulse } from 'react-animations';
+
+const pulseAnimation = keyframes`${pulse}`;
 
 const Button = styled.button`
     background-color: ${props => props.color || "black"};
+    &:active {
+        animation: 0.2s ${pulseAnimation};
+    }
 `;
 
 function Tile(props) {
@@ -10,8 +16,17 @@ function Tile(props) {
         props.headerText({Main: props.text, Sub: props.description});
     }
 
+    function updateColor() {
+        document.getElementsByClassName("textContainer")[0].style.borderColor = props.color;
+    }
+
+    function updateStatus() {
+        updateHeader();
+        updateColor();
+    }
+
     return (
-        <Button color={ props.color } onClick={ updateHeader } >
+        <Button color={ props.color } onClick={ updateStatus } >
             <div>
                 { props.text }
             </div>

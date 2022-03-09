@@ -7,8 +7,8 @@
 
 .pageBody {
   padding-top: 15px;
-  padding-right: 15%;
-  padding-left: 15%;
+  padding-right: 20%;
+  padding-left: 20%;
 }
 
 .textMain, .textSub {
@@ -18,5 +18,12 @@
 }
 
 .textContainer {
-  padding-bottom: 5px;
+  margin-bottom: 15px;
+  border: 5px solid #1C6EA4;
+  border-radius: 13px;
+  padding: 15px;
+}
+
+body {
+  background-color: white;
 }

@@ -1,14 +1,13 @@
 button {
-    height: 100px;
-    width: 170px;
+    height: 110px;
+    width: 190px;
     border: 0;
-    opacity: 0.8;
     position: relative;
     border-radius: 8px;
 }
 
 button:hover {
-    opacity: 1;
+    filter: brightness(92%);
     cursor: pointer;
 }
 
