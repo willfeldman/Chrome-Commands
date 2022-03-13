@@ -13,20 +13,22 @@ const Button = styled.button`
 
 function Tile(props) {
     function updateHeader() {
-        props.headerText({Main: props.text, Sub: props.description});
+        props.headerText({Main: props.link, Sub: props.description});
     }
 
     function updateColor() {
-        document.getElementsByClassName("textContainer")[0].style.borderColor = props.color;
+        // document.getElementsByClassName("textContainer")[0].style.borderColor = props.color;
+        // document.body.style.borderColor = props.color;
     }
 
     function updateStatus() {
         updateHeader();
         updateColor();
+        console.log(props.link);
     }
 
     return (
-        <Button color={ props.color } onClick={ updateStatus } >
+        <Button color={ props.color } onClick={ updateStatus }>
             <div>
                 { props.text }
             </div>

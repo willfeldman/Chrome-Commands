@@ -1,9 +1,10 @@
 * {
     margin: 4px 6px;
+    text-align: center;
 }
 
 .tileGroup {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    margin: 0 auto;
+    display: inline-block;
+    overflow: hidden;
 }
