@@ -10,7 +10,9 @@ function Notification(props) {
 
     return (
         <div className='notificationContainer'>
-            <span className='notificationText'><strong>{props.link}</strong>has been copied — paste it in new tab. <FontAwesomeIcon className='fontIcon' icon={faXmark} onClick={hide} /></span>
+            <span className='notificationText'>
+                <strong>{props.link}</strong>has been copied — paste it in a new tab. <FontAwesomeIcon className='fontIcon' icon={faXmark} onClick={hide} />
+            </span>
         </div>
     );
   }
