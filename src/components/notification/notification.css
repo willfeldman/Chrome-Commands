@@ -1,0 +1,17 @@
+.notificationText {
+    color: #3b763d;
+}
+
+.notificationContainer {
+    position: relative;
+    bottom: -45px;
+    padding: 15px;
+    border-radius: 25px;
+    background-color: #dff0d8;
+    display: none;
+}
+
+.fontIcon {
+    vertical-align: middle;
+    color: #bfd8b9;
+}

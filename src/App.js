@@ -1,7 +1,9 @@
-import { TileContainer, Test } from './components/tile/TileContainer';
+import { TileContainer } from './components/tile/TileContainer';
 import { Header } from './components/header/Header';
+import { Notification } from './components/notification/Notification';
 import { useState } from 'react';
 import { data } from './data';
+import './app.scss';
 
 function App() {
     const textMain = "Chrome:// Commands";
@@ -12,6 +14,7 @@ function App() {
         <div className='pageBody'>
             <Header textMain={text.Main} textSub={text.Sub} />
             <TileContainer text={setText} data={data} />
+            <Notification link={text.Main} />
         </div>
     );
 }

@@ -1,6 +1,7 @@
 import './tile.scss';
 import styled, { keyframes } from 'styled-components';
 import { pulse } from 'react-animations';
+import { animateCSS } from '../../helper/animate';
 
 const pulseAnimation = keyframes`${pulse}`;
 
@@ -17,14 +18,29 @@ function Tile(props) {
     }
 
     function updateColor() {
-        // document.getElementsByClassName("textContainer")[0].style.borderColor = props.color;
-        // document.body.style.borderColor = props.color;
+        document.getElementsByClassName("textMain")[0].style.color = props.color;
+    }
+
+    function fadeIn() {
+        animateCSS(".textMain", "fadeIn", "0.5s");
+        animateCSS(".textSub", "fadeIn", "0.5s");
+        animateCSS(".notificationContainer", "fadeIn", "0.5s");
+    }
+
+    function copyURL() {
+        navigator.clipboard.writeText(props.link);
+    }
+
+    function linkCopiedNotification() {
+        copyURL();
+        document.getElementsByClassName("notificationContainer")[0].style.display = "inline";
     }
 
     function updateStatus() {
         updateHeader();
         updateColor();
-        console.log(props.link);
+        fadeIn();
+        linkCopiedNotification();
     }
 
     return (

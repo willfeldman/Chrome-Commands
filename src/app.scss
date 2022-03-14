@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@import './breakpoints.scss';
+
+body {
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
+  text-transform: lowercase;
+}
+
+.pageBody {
+  padding-top: 15px;
+  @include xl {
+    padding-right: 20%;
+    padding-left: 20%;
+  }
+  @include lg {
+    padding-right: 15%;
+    padding-left: 15%;
+  }
+}
+
+.textMain {
+  font-weight: 400;
+}
+
+.textSub {
+  font-weight: 300;
+}
+
+.textMain, .textSub {
+  text-align: center;
+  color: #333333;
+}
+
+.textContainer {
+  margin-bottom: 15px;
+  border-radius: 13px;
+  padding: 15px;
+}
