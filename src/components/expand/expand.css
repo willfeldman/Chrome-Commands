@@ -1,0 +1,15 @@
+.fontIcon {
+    vertical-align: middle;
+    color: #808080;
+}
+
+.expandContainer {
+    margin: 25px;
+}
+
+.expandText {
+    color: #808080;
+    padding: 14px;
+    background-color: #f1f3f4;
+    border-radius: 12px;
+}
