@@ -11,9 +11,9 @@ function App() {
 
   return (
     <div className="pageBody">
+      <Notification link={text.Main} />
       <Header textMain={text.Main} textSub={text.Sub} />
       <TileContainer text={setText} />
-      <Notification link={text.Main} />
     </div>
   );
 }

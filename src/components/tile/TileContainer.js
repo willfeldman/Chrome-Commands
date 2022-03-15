@@ -9,12 +9,13 @@ const TileContainer = (props) => {
   // Start the fetch operation as soon as
   // the page loads
   window.addEventListener("load", () => {
-    Fetchdata();
+    fetchData();
   });
 
   // Fetch the required data using the get() method
-  const Fetchdata = () => {
+  const fetchData = () => {
     db.collection("data")
+      .orderBy("name")
       .get()
       .then((querySnapshot) => {
         // Loop through the data and store

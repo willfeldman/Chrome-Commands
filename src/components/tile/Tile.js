@@ -22,9 +22,7 @@ function Tile(props) {
   }
 
   function fadeIn() {
-    animateCSS(".textMain", "fadeIn", "0.5s");
-    animateCSS(".textSub", "fadeIn", "0.5s");
-    animateCSS(".notificationContainer", "fadeIn", "0.5s");
+    animateCSS(".notificationContainer", "slideInDown", "0.5s");
   }
 
   function copyURL() {
@@ -34,7 +32,7 @@ function Tile(props) {
   function linkCopiedNotification() {
     copyURL();
     document.getElementsByClassName("notificationContainer")[0].style.display =
-      "inline";
+      "inline-block";
   }
 
   function updateStatus() {
