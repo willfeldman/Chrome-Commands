@@ -23,6 +23,11 @@ button {
     opacity: 1;
 }
 
+.starIconFavorited:hover {
+    color: #d45535;
+    opacity: 1;
+}
+
 button:hover {
     filter: brightness(92%);
     cursor: pointer;

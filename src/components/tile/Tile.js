@@ -1,11 +1,11 @@
 import "./tile.scss";
-import { useEffect } from 'react';
+import { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
-import { useStickyState } from '../../hooks/useStickyState';
+import { useStickyState } from "../../hooks/useStickyState";
 import { pulse } from "react-animations";
 import { animateCSS } from "../../helper/animate";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faThumbtack } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faThumbtack } from "@fortawesome/free-solid-svg-icons";
 
 const pulseAnimation = keyframes`${pulse}`;
 
@@ -19,10 +19,8 @@ const Button = styled.button`
 function Tile(props) {
   const [favorited, setFavorited] = useStickyState(false, props.text);
 
-  useEffect(() => {
-    checkFavorite()
-  });
-  
+  useEffect(checkFavorite, [favorited]);
+
   function updateHeader() {
     props.headerText({ Main: props.link, Sub: props.description });
   }
@@ -67,7 +65,12 @@ function Tile(props) {
 
   return (
     <Button color={props.color} onClick={updateStatus}>
-      <FontAwesomeIcon className='starIcon' id={props.text} icon={faThumbtack} onClick={toggleFavorite} />
+      <FontAwesomeIcon
+        className="starIcon"
+        id={props.text}
+        icon={faThumbtack}
+        onClick={toggleFavorite}
+      />
       <div className="buttonText">{props.text}</div>
     </Button>
   );

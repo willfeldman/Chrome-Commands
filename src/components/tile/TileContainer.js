@@ -4,37 +4,48 @@ import db from "../../firebase";
 import { useState } from "react";
 
 const TileContainer = (props) => {
-  const [info, setInfo] = useState([]);
+  const [tiles, setTiles] = useState([]);
 
-  // Start the fetch operation as soon as
-  // the page loads
+  var index = 0;
+
   window.addEventListener("load", () => {
     fetchData();
   });
 
-  // Fetch the required data using the get() method
   const fetchData = () => {
     db.collection("data")
       .orderBy("name")
       .get()
       .then((querySnapshot) => {
-        // Loop through the data and store
-        // it in array to display
         querySnapshot.forEach((element) => {
           var data = element.data();
-          setInfo((arr) => [...arr, data]);
+          setTiles((arr) => [...arr, {data: data, position: index}]);
+          index = index + 1;
         });
       });
   };
+
+  // not sure if isPinned works...
+  function isPinned(name) {
+    const stored = window.localStorage.getItem(name);
+    if (stored != null) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   return (
     <div className="tileGroup">
-      {info.map((data) => (
+      {tiles
+      .sort((a, b) => a.position > b.position ? 1 : -1)
+      .map((item) => (
         <Tile
           headerText={props.text}
-          description={data.description}
-          color={data.color}
-          text={data.name}
-          link={data.link}
+          description={item.data.description}
+          color={item.data.color}
+          text={item.data.name}
+          link={item.data.link}
         />
       ))}
     </div>
