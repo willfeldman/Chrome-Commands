@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="pageBody">
-      <Favicon url="../public/favicon.ico" />
+      <Favicon url="./favicon.ico" />
       <Notification link={text.Main} />
       <Header textMain={text.Main} textSub={text.Sub} />
       <TileContainer text={setText} />
