@@ -13,7 +13,7 @@ const TileContainer = (props) => {
   return (
     <div className="tileGroup">
       {error && <strong>Error: {JSON.stringify(error)}</strong>}
-      {loading && <span>Loading...</span>}
+      {loading && <div class="loader"></div>}
       {value && (
         <span>
           {value.docs.map((item) => (
