@@ -43,7 +43,7 @@ function Tile(props) {
   }
 
   return (
-    <Button color={props.color} onClick={updateStatus}>
+    <Button color={props.color} onClick={updateStatus} className="tileElement">
       <div className="buttonText">{props.text}</div>
     </Button>
   );
