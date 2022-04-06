@@ -4,7 +4,7 @@
   margin: 4px 6px;
 }
 
-button {
+.tileElement {
   height: 90px;
   width: 150px;
   border: 0;
@@ -39,7 +39,7 @@ button {
   opacity: 1;
 }
 
-button:hover {
+.tileElement:hover {
   filter: brightness(92%);
   cursor: pointer;
   .starIcon {
