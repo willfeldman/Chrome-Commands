@@ -2,7 +2,7 @@ import { TileContainer } from "./components/tile/TileContainer";
 import { Header } from "./components/header/Header";
 import { Notification } from "./components/notification/Notification";
 import { useState } from "react";
-import Favicon from 'react-favicon';
+import Favicon from "react-favicon";
 import "./app.scss";
 
 function App() {

@@ -2,9 +2,20 @@
 @import './breakpoints.scss';
 
 body {
-  background-color: white;
   font-family: 'Roboto', sans-serif;
   text-transform: lowercase;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+body.light-mode {
+  background-color: white;
+  color: #333333;
+}
+
+body.dark-mode {
+  background-color: #333333;
+  color: white;
 }
 
 .pageBody {
@@ -29,7 +40,6 @@ body {
 
 .textMain, .textSub {
   text-align: center;
-  color: #333333;
 }
 
 .textContainer {
