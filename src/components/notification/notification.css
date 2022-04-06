@@ -6,7 +6,8 @@
     background-color: #dff0d8;
     border-radius: 25px;
     padding: 10px;
-    display: none;
+    display: inline-block;
+    visibility: hidden;
 }
 
 .notificationFontIcon {

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 function hide() {
-    document.getElementsByClassName("notificationContainer")[0].style.display = "none";
+    document.getElementsByClassName("notificationContainer")[0].style.visibility = "hidden";
 }
 
 function Notification(props) {

@@ -31,8 +31,8 @@ function Tile(props) {
 
   function linkCopiedNotification() {
     copyURL();
-    document.getElementsByClassName("notificationContainer")[0].style.display =
-      "inline-block";
+    document.getElementsByClassName("notificationContainer")[0].style.visibility =
+      "visible";
   }
 
   function updateStatus() {
