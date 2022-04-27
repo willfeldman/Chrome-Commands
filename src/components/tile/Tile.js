@@ -16,7 +16,12 @@ const Button = styled.button`
 `;
 
 function Tile(props) {
-  const [pinned, setPinned] = useState(false);
+  const [pinned, setPinned] = useState(props.pinned);
+
+  function getCorrectClassForInit() {
+    return (pinned ? "starIconFavorited" : "");
+  }
+  
   function updateHeader() {
     props.headerText({ Main: props.link, Sub: props.description });
   }
@@ -47,12 +52,26 @@ function Tile(props) {
     linkCopiedNotification();
   }
 
+  function toggleFavorite() {
+    const element = document.getElementById(props.text);
+    if (pinned) {
+      element.classList.remove("starIconFavorited");
+      localStorage.setItem(props.text, false);
+      setPinned(false);
+    } else {
+      element.classList.add("starIconFavorited");
+      localStorage.setItem(props.text, true);
+      setPinned(true);
+    }
+  }
+
   return (
     <Button color={props.color} onClick={updateStatus} className="tileElement">
       <FontAwesomeIcon
-        className="starIcon"
+        className={'starIcon ' + getCorrectClassForInit()}
         id={props.text}
         icon={faThumbtack}
+        onClick={toggleFavorite}
       />
       <div className="buttonText">{props.text}</div>
     </Button>
