@@ -2,6 +2,9 @@ import "./tile.scss";
 import styled, { keyframes } from "styled-components";
 import { pulse } from "react-animations";
 import { animateCSS } from "../../helper/animate";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbtack } from '@fortawesome/free-solid-svg-icons';
+import { useState } from "react";
 
 const pulseAnimation = keyframes`${pulse}`;
 
@@ -13,6 +16,7 @@ const Button = styled.button`
 `;
 
 function Tile(props) {
+  const [pinned, setPinned] = useState(false);
   function updateHeader() {
     props.headerText({ Main: props.link, Sub: props.description });
   }
@@ -44,6 +48,11 @@ function Tile(props) {
 
   return (
     <Button color={props.color} onClick={updateStatus} className="tileElement">
+      <FontAwesomeIcon
+        className="starIcon"
+        id={props.text}
+        icon={faThumbtack}
+      />
       <div className="buttonText">{props.text}</div>
     </Button>
   );
