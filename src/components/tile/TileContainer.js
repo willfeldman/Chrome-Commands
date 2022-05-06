@@ -7,16 +7,19 @@ const TileContainer = (props) => {
     return (localStorage.getItem(name) === 'true') || false;
   }
 
-  const allTiles = [];
+  const unpinnedTiles = [];
+  const pinnedTiles = [];
 
   for (var i = 0; i < props.tiles.length; i++) {
     const tile = props.tiles[i];
     if (checkPinned(tile.name)) {
-      allTiles.unshift(tile);
+      pinnedTiles.push(tile);
     } else {
-      allTiles.push(tile);
+      unpinnedTiles.push(tile);
     }
   }
+
+  const allTiles = pinnedTiles.concat(unpinnedTiles);
 
   return (
     <div className="tileGroup">
@@ -26,7 +29,7 @@ const TileContainer = (props) => {
             <Tile
               headerText={props.text}
               description={item.description}
-              color="#fe4e40"
+              color={item.color}
               text={item.name}
               link={item.link}
               pinned={checkPinned(item.name)}
